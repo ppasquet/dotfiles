@@ -1,0 +1,1 @@
+/Users/pierrepasquet/.tmux.conf
