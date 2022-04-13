@@ -14,7 +14,7 @@ vim.g.incsearch = true      -- Show search results as you type
 vim.g.showmatch = true      -- Show matching brackets
 vim.bo.autoindent = true    -- Indent a new line the same amount as the line just typed
 vim.wo.cc = "90"            -- Set a 90 column border
-vim.g.noswapfile = true
+vim.bo.swapfile = false
 
 -- Disable arrow keys in NORMAL and INSERT modes
 keymap('i', '<up>', '<nop>', {})
