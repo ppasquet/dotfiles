@@ -4,18 +4,19 @@ local opts = {noremap = true}
 keymap('i', 'jk', '<ESC>', opts)
 
 vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
-vim.bo.softtabstop = 4
-vim.bo.tabstop = 4
+vim.bo.textwidth=120
+vim.bo.tabstop=4
+vim.bo.softtabstop=4
+vim.bo.shiftwidth=4
+vim.bo.autoindent = true
 vim.wo.number = true        -- Show line numbers
 vim.g.hlsearch = true       -- Highlights all results
 vim.g.ignorecase = true     -- Ignore case in search
 vim.g.incsearch = true      -- Show search results as you type
 vim.g.showmatch = true      -- Show matching brackets
-vim.bo.autoindent = true    -- Indent a new line the same amount as the line just typed
 vim.wo.cc = "90"            -- Set a 90 column border
 vim.bo.swapfile = false
-vim.wo.foldmethod = "indent"
+vim.wo.foldmethod = "syntax"
 
 -- Disable arrow keys in NORMAL and INSERT modes
 keymap('i', '<up>', '<nop>', {})
@@ -59,7 +60,7 @@ require('packer').startup(
         use 'hrsh7th/cmp-cmdline'
         use 'hrsh7th/nvim-cmp'
         use 'JuliaEditorSupport/julia-vim'
-	use 'tmhedberg/SimpylFold'
+        use 'tmhedberg/SimpylFold'
     end
 )
 
@@ -70,7 +71,7 @@ vim.cmd([[colorscheme gruvbox]])
 
 -- Treesitter
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = "all", -- only use parser that are maintained
+    ensure_installed = {"lua", "html", "python", "julia", "json"},
     highlight = {
         enable = true
     },
