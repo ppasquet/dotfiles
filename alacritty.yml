@@ -49,6 +49,6 @@ cursor:
         blinking: Always
 
 shell:
-    program: /bin/zsh
+    program: /usr/local/bin/zsh
     args:
         - --login
