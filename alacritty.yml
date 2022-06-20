@@ -1,7 +1,7 @@
 font:
     normal: 
         family: "MesloLGS NF"
-    size: 13
+    size: 14
 
 # Colors (Gruvbox dark)
 colors:
@@ -41,7 +41,7 @@ window:
     dynamic_padding: true
     startup_mode: Windowed
     dynamic_title: true
-    decorations: none
+    decorations: buttonless
 
 cursor:
     style: 
