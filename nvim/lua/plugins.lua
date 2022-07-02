@@ -36,6 +36,7 @@ return packer.startup(function(use)
     use { 'jeffkreeftmeijer/vim-numbertoggle' }
     use { 'nvim-treesitter/nvim-treesitter' }
     use { 'williamboman/nvim-lsp-installer' }
+    use { 'neovim/nvim-lspconfig' }
     use { 'tmhedberg/SimpylFold' } 
 
     if packer_bootstrap then 
