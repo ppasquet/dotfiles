@@ -34,10 +34,27 @@ return packer.startup(function(use)
     use { 'kana/vim-textobj-line' }
     use { 'kana/vim-textobj-entire' }
     use { 'jeffkreeftmeijer/vim-numbertoggle' }
+
     use { 'nvim-treesitter/nvim-treesitter' }
-    use { 'williamboman/nvim-lsp-installer' }
+    
+    -- LSP
     use { 'neovim/nvim-lspconfig' }
+    use { 'williamboman/nvim-lsp-installer' }
+
     use { 'tmhedberg/SimpylFold' } 
+
+    -- cmp
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer', requires = {"hrsh7th/nvim-cmp"}}
+    use { 'hrsh7th/cmp-path', requires = {"hrsh7th/nvim-cmp"}}
+    use { 'hrsh7th/cmp-cmdline', requires = {"hrsh7th/nvim-cmp"}}
+    use { 'hrsh7th/cmp-nvim-lsp', requires = {"hrsh7th/nvim-cmp"}}
+    use { 'saadparwaiz1/cmp_luasnip' }
+
+    use { 'L3MON4D3/LuaSnip' }
+    use { 'rafamadriz/friendly-snippets' }
+
+    use { 'windwp/nvim-autopairs' }
 
     if packer_bootstrap then 
         require('packer').sync()

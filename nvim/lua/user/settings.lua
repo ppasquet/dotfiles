@@ -1,5 +1,3 @@
-local theme = require "theme"
-
 local options = {
     tabstop = 4,
     softtabstop = 0,
