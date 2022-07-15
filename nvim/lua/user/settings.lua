@@ -1,4 +1,5 @@
 local options = {
+    clipboard = "unnamedplus",
     tabstop = 4,
     softtabstop = 0,
     expandtab = true,
@@ -10,10 +11,17 @@ local options = {
     showmatch = true,
     cc = "90",
     swapfile = false,
-    foldmethod = "syntax"
+    backup = false,
+    writebackup = false,
+    foldmethod = "syntax",
+    cmdheight = 2,
+    updatetime = 300,
+    fileencoding = "utf-8",
+    wrap = false,
+    scrolloff = 8
 }
 
-for key, value in pairs(options) do 
+for key, value in pairs(options) do
     vim.opt[key] = value
 end
 
