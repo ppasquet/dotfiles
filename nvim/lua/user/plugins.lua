@@ -2,10 +2,10 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
-        "git", 
+        "git",
         "clone",
         "--depth",
-        "1", 
+        "1",
         "https://github.com/wbthomason/packer.nvim",
         install_path
     }
@@ -82,6 +82,12 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
+
+    -- Toggleterm
+    use "akinsho/toggleterm.nvim"
+
+    -- LazyGIT
+    use "kdheepak/lazygit.nvim"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
