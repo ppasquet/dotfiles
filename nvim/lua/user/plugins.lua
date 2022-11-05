@@ -58,6 +58,17 @@ return packer.startup(function(use)
     use { 'kana/vim-textobj-line' }
     use { 'kana/vim-textobj-entire' }
     use { 'jeffkreeftmeijer/vim-numbertoggle' }
+    
+    -- cmp plugins
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
+    use "saadparwaiz1/cmp_luasnip"
+    
+    -- snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
