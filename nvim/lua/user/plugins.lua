@@ -65,10 +65,17 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-cmdline"
     use "saadparwaiz1/cmp_luasnip"
-    
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lua"
+
     -- snippets
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
+
+    -- LSP
+    use "neovim/nvim-lspconfig"
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
