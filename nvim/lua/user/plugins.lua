@@ -16,10 +16,10 @@ end
 
 -- Autocommand that reloads neovim whenever you save this file
 vim.cmd [[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]]
 
 -- Use a protected call so we don't error out on first use
@@ -43,7 +43,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" }
-    
+
     -- Colorscheme
     use { "ellisonleao/gruvbox.nvim" }
 
@@ -58,7 +58,7 @@ return packer.startup(function(use)
     use { 'kana/vim-textobj-line' }
     use { 'kana/vim-textobj-entire' }
     use { 'jeffkreeftmeijer/vim-numbertoggle' }
-    
+
     -- cmp plugins
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
@@ -76,6 +76,12 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig"
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
+
+    -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
