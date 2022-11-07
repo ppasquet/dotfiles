@@ -34,6 +34,6 @@ keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
 -- TODO: Fix the mapping
-keymap("v", "ª", ":m .+1<CR>==", opts)
-keymap("v", "º", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP"', opts)
+-- keymap("v", "ª", ":m .+1<CR>==", opts)
+-- keymap("v", "º", ":m .-2<CR>==", opts)
+-- keymap("v", "p", '"_dP"', opts)
