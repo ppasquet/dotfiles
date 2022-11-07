@@ -9,7 +9,7 @@ local options = {
     hlsearch = true,
     ignorecase = true,
     showmatch = true,
-    cc = "90",
+    cc = "92",
     swapfile = false,
     backup = false,
     writebackup = false,
@@ -18,10 +18,11 @@ local options = {
     updatetime = 300,
     fileencoding = "utf-8",
     wrap = false,
-    scrolloff = 8
+    scrolloff = 8,
 }
 
 for key, value in pairs(options) do
     vim.opt[key] = value
 end
 
+vim.cmd [[set iskeyword+=-]]

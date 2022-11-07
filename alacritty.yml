@@ -1,7 +1,7 @@
 font:
     normal: 
         family: "MesloLGS NF"
-    size: 13
+    size: 12
 
 # Colors (Gruvbox dark)
 colors:
