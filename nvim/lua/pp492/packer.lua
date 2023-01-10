@@ -28,4 +28,7 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+    use { "tpope/vim-surround" }
+    use { "tpope/vim-commentary" }
+
 end)
