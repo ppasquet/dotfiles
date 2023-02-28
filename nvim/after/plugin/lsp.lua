@@ -3,12 +3,18 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
 	settings = {
 		Lua = {
+            runtime = {
+                version = "LuaJIT",
+            },
 			diagnostics = {
 				globals = { 'vim' }
-			}
+			},
+            telemetry = {
+                enable = false
+            }
 		}
 	}
 })
@@ -21,11 +27,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-y>'] = cmp.mapping.confirm({ select = true }),
 	["<C-Space>"] = cmp.mapping.complete(),
 })
-
--- disable completion with tab
--- this helps with copilot setup
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
