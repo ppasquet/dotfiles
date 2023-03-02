@@ -17,6 +17,8 @@ local options = {
 	signcolumn = "yes",
     updatetime = 50,
     colorcolumn = "80",
+    splitbelow = true,
+    splitright = true
 }
 
 for key, value in pairs(options) do
