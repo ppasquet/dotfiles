@@ -79,6 +79,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     zsh-autosuggestions
+    aws
+    brew
+    docker
+    dotenv
+    encode64
+    macos
 )
 
 source $ZSH/oh-my-zsh.sh
