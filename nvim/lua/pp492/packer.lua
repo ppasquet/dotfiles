@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
 			-- Snippets
 			{'L3MON4D3/LuaSnip'},
 			{'rafamadriz/friendly-snippets'},
+
+            -- Linting
+            { "jose-elias-alvarez/null-ls.nvim" }
 		}
 	}
     use { "tpope/vim-surround" }

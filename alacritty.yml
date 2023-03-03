@@ -1,7 +1,7 @@
 font:
     normal: 
-        family: "MesloLGS NF"
-    size: 13
+      family: "Essential PragmataPro"
+    size: 15
 
 # Colors (Gruvbox dark)
 colors:
