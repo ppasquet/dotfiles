@@ -27,14 +27,13 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 			{'rafamadriz/friendly-snippets'},
 
-            -- Linting
-            { "jose-elias-alvarez/null-ls.nvim" }
 		}
 	}
     use { "tpope/vim-surround" }
     use { "tpope/vim-commentary" }
     use { "tpope/vim-obsession" }
-
+    -- Linting
+    use { "jose-elias-alvarez/null-ls.nvim" }
     use {
         "windwp/nvim-autopairs" , config = function()
             require("nvim-autopairs").setup {}
