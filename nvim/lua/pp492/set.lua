@@ -16,7 +16,7 @@ local options = {
 	scrolloff = 8,
 	signcolumn = "yes",
     updatetime = 50,
-    colorcolumn = "80",
+    colorcolumn = "89",
     splitbelow = true,
     splitright = true
 }
