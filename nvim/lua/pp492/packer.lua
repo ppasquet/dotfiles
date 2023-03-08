@@ -34,10 +34,13 @@ return require('packer').startup(function(use)
     use { "tpope/vim-obsession" }
     -- Linting
     use { "jose-elias-alvarez/null-ls.nvim" }
-    use {
-        "windwp/nvim-autopairs" , config = function()
-            require("nvim-autopairs").setup {}
-        end,
-    }
+    -- Git
+    use { "tpope/vim-fugitive" }
+    use { "lewis6991/gitsigns.nvim" }
+    -- use {
+    --     "windwp/nvim-autopairs" , config = function()
+    --         require("nvim-autopairs").setup {}
+    --     end,
+    -- }
 end)
 
