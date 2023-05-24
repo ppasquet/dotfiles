@@ -37,10 +37,9 @@ return require('packer').startup(function(use)
     -- Git
     use { "tpope/vim-fugitive" }
     use { "lewis6991/gitsigns.nvim" }
-    -- use {
-    --     "windwp/nvim-autopairs" , config = function()
-    --         require("nvim-autopairs").setup {}
-    --     end,
-    -- }
+    -- DAP
+    use { 'mfussenegger/nvim-dap' }
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { "theHamsta/nvim-dap-virtual-text" }
 end)
 
