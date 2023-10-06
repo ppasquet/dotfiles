@@ -30,14 +30,19 @@ return require('packer').startup(function(use)
 		}
 	}
     use { "tpope/vim-surround" }
-    use { "tpope/vim-commentary" }
+    use { 
+        "numToStr/Comment.nvim", 
+        config = function()
+            require('Comment').setup()
+        end
+    }
     use { "tpope/vim-obsession" }
     -- Git
     use { "tpope/vim-fugitive" }
     use { "lewis6991/gitsigns.nvim" }
-    -- DAP
-    use { 'mfussenegger/nvim-dap' }
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use { "theHamsta/nvim-dap-virtual-text" }
+    -- -- DAP
+    -- use { 'mfussenegger/nvim-dap' }
+    -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    -- use { "theHamsta/nvim-dap-virtual-text" }
 end)
 

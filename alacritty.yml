@@ -1,7 +1,7 @@
 font:
     normal: 
-      family: "Essential PragmataPro"
-    size: 14
+      family: "JetBrains Mono"
+    size: 12
 
 # Colors (Gruvbox dark)
 colors:
@@ -36,12 +36,11 @@ colors:
 
 window:
     padding:
-        x: 10
-        y: 10
+        x: 5
+        y: 5
     dynamic_padding: true
     startup_mode: Windowed
     dynamic_title: true
-    decorations: buttonless
 
 cursor:
     style: 
