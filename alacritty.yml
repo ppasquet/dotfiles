@@ -1,7 +1,7 @@
 font:
     normal: 
       family: "JetBrains Mono"
-    size: 12
+    size: 14
 
 # Colors (Gruvbox dark)
 colors:
@@ -35,11 +35,13 @@ colors:
     white:   '0xebdbb2'
 
 window:
+    opacity: 0.9
     padding:
         x: 5
         y: 5
     dynamic_padding: true
     startup_mode: Windowed
+    decorations: buttonless
     dynamic_title: true
 
 cursor:
