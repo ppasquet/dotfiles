@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
     -- Git
     use { "tpope/vim-fugitive" }
     use { "lewis6991/gitsigns.nvim" }
+    use { "lervag/vimtex" }
     -- -- DAP
     -- use { 'mfussenegger/nvim-dap' }
     -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
