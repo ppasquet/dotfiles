@@ -49,7 +49,7 @@ cursor:
         shape: Block
         blinking: Always
 
-# shell:
-#     program: /opt/homebrew/bin/zsh
-#     args:
-#         - --login
+shell:
+    program: /usr/local/bin/fish
+    args:
+        - --login
