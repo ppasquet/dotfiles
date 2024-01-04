@@ -51,6 +51,6 @@ cursor:
         blinking: Always
 
 shell:
-    program: /usr/local/bin/fish
+    program: /bin/zsh
     args:
         - --login
