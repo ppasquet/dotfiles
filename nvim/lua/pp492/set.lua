@@ -18,7 +18,8 @@ local options = {
     updatetime = 50,
     colorcolumn = "121",
     splitbelow = true,
-    splitright = true
+    splitright = true,
+    conceallevel = 1,
 }
 
 for key, value in pairs(options) do

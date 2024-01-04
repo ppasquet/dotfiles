@@ -12,28 +12,35 @@ return require('packer').startup(function(use)
     use { "hrsh7th/nvim-cmp" }
     use { "hrsh7th/cmp-nvim-lsp" }
     use { "L3MON4D3/LuaSnip" }
-	-- use {
-	-- 	'VonHeikemen/lsp-zero.nvim',
-	-- 	requires = {
-	-- 		-- LSP Support
-	-- 		{'neovim/nvim-lspconfig'},
-	-- 		{'williamboman/mason.nvim'},
-	-- 		{'williamboman/mason-lspconfig.nvim'},
-	--
-	-- 		-- Autocompletion
-	-- 		{'hrsh7th/nvim-cmp'},
-	-- 		{'hrsh7th/cmp-buffer'},
-	-- 		{'hrsh7th/cmp-path'},
-	-- 		{'saadparwaiz1/cmp_luasnip'},
-	-- 		{'hrsh7th/cmp-nvim-lsp'},
-	-- 		{'hrsh7th/cmp-nvim-lua'},
-	--
-	-- 		-- Snippets
-	-- 		{'L3MON4D3/LuaSnip'},
-	-- 		{'rafamadriz/friendly-snippets'},
-	--
-	-- 	}
-	-- }
+    use {
+        "epwalsh/obsidian.nvim",
+        tag = "*",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+        -- config = function()
+            -- require("obsidian").setup({
+            --     workspaces = {
+            --         {
+            --             name = "pp492",
+            --             path = "~/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/pp492"
+            --         },
+            --     },
+            --     daily_notes = {
+            --         -- Optional, if you keep daily notes in a separate directory.
+            --         folder = "daily",
+            --         -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+            --         template = nil
+            --     },
+            --     follow_url_func = function(url)
+            --         -- Open the URL in the default web browser.
+            --         vim.fn.jobstart({"open", url})  -- Mac OS
+            --         -- vim.fn.jobstart({"xdg-open", url})  -- linux
+            --     end,
+            --     open_notes_in = "vsplit",
+            -- })
+        -- end,
+    }
     use { "tpope/vim-surround" }
     use { 
         "numToStr/Comment.nvim", 
