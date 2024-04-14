@@ -51,11 +51,13 @@ return require('packer').startup(function(use)
     use { "tpope/vim-obsession" }
     -- Git
     use { "tpope/vim-fugitive" }
+    use { "tpope/vim-rhubarb" }
     use { "lewis6991/gitsigns.nvim" }
-    use { "lervag/vimtex" }
     -- -- DAP
     -- use { 'mfussenegger/nvim-dap' }
     -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     -- use { "theHamsta/nvim-dap-virtual-text" }
+    -- zk 
+    use { "zk-org/zk-nvim" }
 end)
 

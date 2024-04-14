@@ -6,18 +6,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local opts = {buffer = event.buf}
 
-	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-	-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-	-- vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-	-- vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-	-- vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-	-- vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-	-- vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-	-- vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-	-- vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
- --    vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
-	-- vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-
     vim.keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
     vim.keymap.set('n', "gd", '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -32,6 +20,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', "<leader>vd", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
     vim.keymap.set('n', "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
     vim.keymap.set('n', "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts) 
+
+    vim.keymap.set('n', "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
+    vim.keymap.set('n', "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", opts)
+    vim.keymap.set('n', "<leader>zt", "<Cmd>ZkTags<CR>", opts)
+    vim.keymap.set('n', "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", opts)
   end
 })
 
