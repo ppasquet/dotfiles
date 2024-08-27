@@ -1,4 +1,9 @@
 export DYLD_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/
 export SPATIALINDEX_C_LIBRARY=/opt/homebrew/Cellar/spatialindex/1.9.3/lib
-export PYENV_ROOT="$HOME/.pyenv"
 export ZK_NOTEBOOK_DIR="/Users/pierrepasquet/Library/Mobile Documents/com~apple~CloudDocs/zk-notes"
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+# export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+# export SPARK_HOME="/Users/pierrepasquet/spark-3.4.3-bin-hadoop3"
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.11
+# export SPARK_HOME=/opt/homebrew/Cellar/apache-spark/3.5.1
+# export SPARK_HOME=/opt/homebrew/Cellar/apache-spark/3.5.1/

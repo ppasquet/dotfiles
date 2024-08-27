@@ -1,17 +1,3 @@
--- vim.opt.termguicolors = true
--- vim.opt.background = "dark"
--- require("gruvbox").setup({
---     contrast="soft"
--- })
--- vim.cmd.colorscheme("gruvbox")
--- highlight Normal     ctermbg=NONE guibg=NONE
--- highlight LineNr     ctermbg=NONE guibg=NONE
--- highlight SignColumn ctermbg=NONE guibg=NONE
--- hi! Normal ctermbg=NONE guibg=NONE
--- hi! NonText ctermbg=NONE guibg=NONE
--- hi Normal ctermbg=none
--- vim.opt.termguicolors = true
--- autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 require("gruvbox").setup({
   terminal_colors = true, -- add neovim terminal colors
   undercurl = true,
