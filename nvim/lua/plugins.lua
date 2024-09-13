@@ -14,8 +14,22 @@ return {
         priority = 1000, config = true 
     },
     { 
-        "nvim-treesitter/nvim-treesitter", 
-        build = ":TSUpdate" 
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function()
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = { 
+                    "markdown", "lua", "rust", "typescript", "javascript", "python",
+                    "sql", "dockerfile"
+                },
+                sync_install = false,
+                auto_install = true,
+                highlight = { enable = true },
+                additional_vim_regex_highlighting = false
+
+            })
+        end
     },
     { 
         "neovim/nvim-lspconfig",

@@ -39,26 +39,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
--- vim.api.nvim_create_autocmd('LspAttach', {
---   desc = 'LSP actions',
---   callback = function(event)
---     local opts = {buffer = event.buf}
---
---     vim.keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
---     -- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
---     -- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
---     -- vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
---     vim.keymap.set('n', "<leader>vrn", '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
---     -- vim.keymap.set({'n', 'x'}, "<leader>f", '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
---     vim.keymap.set('n', "<leader>vca", '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
---
---     vim.keymap.set('n', "<leader>vd", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
---     -- vim.keymap.set('n', "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
---     -- vim.keymap.set('n', "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts) 
---   end
--- })
-
-
 -- local cmp = require('cmp')
 --
 -- cmp.setup({
