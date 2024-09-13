@@ -1,4 +1,7 @@
-require "lspconfig".pyright.setup{
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+require "lspconfig".pyright.setup {
+    capabilities = capabilities,
     cmd = {
         "/Users/pierrepasquet/.venv/bin/pyright-langserver", "--stdio"
     }, 
@@ -15,7 +18,8 @@ require "lspconfig".pyright.setup{
     filetypes = { "python" },
 }
 
-require "lspconfig".ruff.setup{
+require "lspconfig".ruff.setup {
+    capabilities = capabilities,
     cmd = { "ruff", "server" }, 
     filetypes = { "python" },
 }
@@ -38,6 +42,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set('n', "<leader>f", vim.lsp.buf.format, opts)
     end
 })
+
 
 -- local cmp = require('cmp')
 --
