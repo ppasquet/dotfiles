@@ -12,8 +12,15 @@ cmp.setup({
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ["<C-Space>"] = cmp.mapping.complete()
     }),
-    sources = {
+    sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
-    }
+    }, {
+        { name = "buffer" }
+    })
 })
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+require("lspconfig").pyright.setup {
+    capabilities = capabilities
+}
