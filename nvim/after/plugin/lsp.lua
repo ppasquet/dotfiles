@@ -24,6 +24,8 @@ require "lspconfig".ruff.setup {
     filetypes = { "python" },
 }
 
+require "lspconfig".ts_ls.setup {}
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
     callback = function(args)
@@ -43,24 +45,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
-
--- local cmp = require('cmp')
---
--- cmp.setup({
---   sources = {
---     {name = "nvim_lsp"},
---   },
---   mapping = cmp.mapping.preset.insert({
---     -- Enter key confirms completion item
---     ["<CR>"] = cmp.mapping.confirm({select = false}),
--- 	["<C-p>"] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}),
--- 	['<C-n>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}),
---     -- Ctrl + space triggers completion menu
---     ["<C-Space>"] = cmp.mapping.complete(),kk
---   }),
---   snippet = {
---     expand = function(args)
---       require("luasnip").lsp_expand(args.body)
---     end,
---   },
--- })
