@@ -34,5 +34,5 @@ require("lazy").setup({
     checker = { enabled = true },
 })
 
-vim.api.nvim_create_autocmd("VimEnter",{callback=function()require"lazy".update()end})
+-- vim.api.nvim_create_autocmd("VimEnter",{callback=function()require"lazy".update()end})
 
