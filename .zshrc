@@ -127,3 +127,6 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.cargo/env"
 . "/Users/pierrepasquet/.deno/env"
+
+
+alias notes="cd $HOME/md-notes && nvim"

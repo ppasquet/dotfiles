@@ -54,4 +54,7 @@ return {
         end,
         ft = { "markdown" },
     },
+    {
+        "ruifm/gitlinker.nvim"
+    }
 }

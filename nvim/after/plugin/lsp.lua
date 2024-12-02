@@ -1,4 +1,5 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local util = require("lspconfig.util")
 
 require "lspconfig".pyright.setup {
     capabilities = capabilities,
@@ -20,7 +21,8 @@ require "lspconfig".pyright.setup {
 
 require "lspconfig".ruff.setup {
     capabilities = capabilities,
-    cmd = { "ruff", "server" }, 
+    cmd = { "ruff", "server"},
+    root_dir = util.find_git_ancestor(),
     filetypes = { "python" },
 }
 

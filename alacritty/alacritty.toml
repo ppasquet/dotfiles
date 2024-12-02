@@ -33,7 +33,7 @@ size = 14
 family = "JetBrains Mono"
 style = "Regular"
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 
@@ -47,3 +47,5 @@ startup_mode = "Windowed"
 [window.padding]
 x = 5
 y = 5
+
+[terminal]
