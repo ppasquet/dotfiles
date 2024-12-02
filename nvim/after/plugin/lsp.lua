@@ -28,6 +28,8 @@ require "lspconfig".ruff.setup {
 
 require "lspconfig".ts_ls.setup {}
 
+require "lspconfig".zls.setup {}
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
     callback = function(args)
