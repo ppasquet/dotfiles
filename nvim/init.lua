@@ -6,3 +6,10 @@ require("config.set")
 -- packer.lua
 -- remap.lua
 -- set.lua
+--
+
+vim.filetype.add({
+    extension = {
+        avsc = "json"
+    }
+})
