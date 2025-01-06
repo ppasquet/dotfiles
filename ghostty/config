@@ -1,0 +1,6 @@
+theme = GruvboxDark
+shell-integration = zsh
+
+# turn fullscreen off
+keybind = cmd+enter=ignore
+
