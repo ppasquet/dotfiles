@@ -8,7 +8,7 @@ require "lspconfig".pyright.setup {
     }, 
     settings = {
         pyright = {
-            disableOrganizeInports = true,
+            disableOrganizeImports = true,
         },
         python = {
             analysis = {

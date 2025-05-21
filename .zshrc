@@ -130,3 +130,10 @@ export NVM_DIR="$HOME/.nvm"
 
 
 alias notes="cd $HOME/md-notes && nvim"
+
+export PATH=/opt/homebrew/bin:$PATH
+export PATH="/Users/pierrepasquet/.local/bin:$PATH"
+export PATH='/Users/pierrepasquet/.duckdb/cli/latest':$PATH
+# export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH
