@@ -1,15 +1,15 @@
 require("config.lazy")
 require("config.remap")
 require("config.set")
--- init.lua
--- lazy.lua
--- packer.lua
--- remap.lua
--- set.lua
---
 
-vim.filetype.add({
-    extension = {
-        avsc = "json"
+vim.lsp.config('rust_analyzer', {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
     }
+  }
 })
+
+vim.lsp.enable("rust_analyzer")
