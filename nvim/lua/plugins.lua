@@ -1,79 +1,8 @@
 return {
     {
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
-        dependencies = {
-            "nvim-lua/plenary.nvim"
-        }
-    },
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make"
-    },
-    {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
         config = true
-    },
-    {
-        'saghen/blink.cmp',
-        dependencies = 'rafamadriz/friendly-snippets',
-
-        version = 'v0.*',
-
-        opts = {
-            keymap = { preset = 'default' },
-
-            appearance = {
-                use_nvim_cmp_as_default = true,
-                -- nerd_font_variant = 'mono'
-            },
-
-            signature = { enabled = true },
-            fuzzy = { implementation = "prefer_rust_with_warning" }
-        },
-    },
-    {
-        "neovim/nvim-lspconfig",
-        dependencies = {
-            'saghen/blink.cmp',
-            {
-                "folke/lazydev.nvim",
-                opts = {
-                    library = {
-                        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-                    },
-                },
-            },
-        },
-        config = function()
-            local capabilities = require('blink.cmp').get_lsp_capabilities()
-            local lspconfig = require("lspconfig")
-            lspconfig["lua_ls"].setup({ capabilities = capabilities })
-            lspconfig["rust_analyzer"].setup({ capabilities = capabilities })
-
-            vim.api.nvim_create_autocmd('LspAttach', {
-                callback = function(args)
-                    local c = vim.lsp.get_client_by_id(args.data.client_id)
-                    if not c then return end
-                    local opts = { buffer = args.buf }
-                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-                    vim.keymap.set('n', "<leader>vrn", vim.lsp.buf.rename, opts)
-                    vim.keymap.set('n', "<leader>vd", vim.diagnostic.open_float, opts)
-                    vim.keymap.set('n', "<leader>vca", vim.lsp.buf.code_action, opts)
-                    vim.keymap.set('n', "<leader>f", vim.lsp.buf.format, opts)
-                    if vim.bo.filetype == "lua" then
-                        -- Format the current buffer on save
-                        vim.api.nvim_create_autocmd('BufWritePre', {
-                            buffer = args.buf,
-                            callback = function()
-                                vim.lsp.buf.format({ bufnr = args.buf, id = c.id })
-                            end,
-                        })
-                    end
-                end,
-            })
-        end,
     },
     {
         "nvim-treesitter/nvim-treesitter",
@@ -85,7 +14,7 @@ return {
                     "lua", "rust", "python",
                 },
                 sync_install = false,
-                auto_install = true,
+                auto_install = false,
                 highlight = {
                     enable = true,
                     disable = function(_, buf)
@@ -101,12 +30,73 @@ return {
             })
         end
     },
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        }
+    },
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make"
+    },
+    { "numToStr/Comment.nvim" },
+    { "lewis6991/gitsigns.nvim" },
     { "tpope/vim-surround" },
     { "tpope/vim-obsession" },
     { "tpope/vim-fugitive" },
-    { "numToStr/Comment.nvim" },
-    { "lewis6991/gitsigns.nvim" },
     {
-        "ruifm/gitlinker.nvim"
+        'saghen/blink.cmp',
+        -- optional: provides snippets for the snippet source
+        dependencies = { 'rafamadriz/friendly-snippets' },
+
+        -- use a release tag to download pre-built binaries
+        version = '1.*',
+        -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+        -- build = 'cargo build --release',
+        -- If you use nix, you can build from source using latest nightly rust with:
+        -- build = 'nix run .#build-plugin',
+
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+            -- 'super-tab' for mappings similar to vscode (tab to accept)
+            -- 'enter' for enter to accept
+            -- 'none' for no mappings
+            --
+            -- All presets have the following mappings:
+            -- C-space: Open menu or open docs if already open
+            -- C-n/C-p or Up/Down: Select next/previous item
+            -- C-e: Hide menu
+            -- C-k: Toggle signature help (if signature.enabled = true)
+            --
+            -- See :h blink-cmp-config-keymap for defining your own keymap
+            keymap = { preset = 'default' },
+
+            appearance = {
+                -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+                -- Adjusts spacing to ensure icons are aligned
+                nerd_font_variant = 'mono'
+            },
+
+            -- (Default) Only show the documentation popup when manually triggered
+            -- completion = { documentation = { auto_show = false } },
+
+            -- Default list of enabled providers defined so that you can extend it
+            -- elsewhere in your config, without redefining it, due to `opts_extend`
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
+            },
+
+            -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+            -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
+            -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
+            --
+            -- See the fuzzy documentation for more information
+            fuzzy = { implementation = "prefer_rust_with_warning" }
+        },
+        opts_extend = { "sources.default" }
     }
 }
