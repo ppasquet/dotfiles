@@ -11,9 +11,10 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = {
-                    "lua", "rust", "python",
+                    "python"
                 },
-                sync_install = false,
+
+                sync_install = true,
                 auto_install = false,
                 highlight = {
                     enable = true,
@@ -24,7 +25,15 @@ return {
                             return true
                         end
                     end,
-                    additional_vim_regex_highlighting = false,
+                },
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = "gnn",
+                        node_incremental = "grn",
+                        scope_incremental = "grc",
+                        node_decremental = "grm",
+                    }
                 },
                 additional_vim_regex_highlighting = false
             })
@@ -32,7 +41,8 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
+        -- tag = "0.1.8",
+        branch = "master",
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
@@ -45,6 +55,15 @@ return {
     { "lewis6991/gitsigns.nvim" },
     { "tpope/vim-surround" },
     { "tpope/vim-obsession" },
+    {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      build = "cd app && yarn install",
+      init = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    },
     { "tpope/vim-fugitive" },
     {
         'saghen/blink.cmp',
