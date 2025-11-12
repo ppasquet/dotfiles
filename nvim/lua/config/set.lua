@@ -20,6 +20,7 @@ local options = {
     splitbelow = true,
     splitright = true,
     conceallevel = 1,
+    autoread = true,
 }
 
 for key, value in pairs(options) do

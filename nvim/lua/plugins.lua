@@ -11,7 +11,7 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = {
-                    "python"
+                    "python", "sql"
                 },
 
                 sync_install = true,
@@ -66,6 +66,23 @@ return {
     },
     { "tpope/vim-fugitive" },
     {
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod', lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
+        init = function()
+            -- Your DBUI configuration
+            vim.g.db_ui_use_nerd_fonts = 1
+        end,
+    },
+    {
         'saghen/blink.cmp',
         -- optional: provides snippets for the snippet source
         dependencies = { 'rafamadriz/friendly-snippets' },
@@ -107,6 +124,12 @@ return {
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
                 default = { 'lsp', 'path', 'snippets', 'buffer' },
+                per_filetype = {
+                    sql = { 'snippets', 'dadbod', 'buffer' },
+                },
+                providers = {
+                    dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+                },
             },
 
             -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -117,5 +140,5 @@ return {
             fuzzy = { implementation = "prefer_rust_with_warning" }
         },
         opts_extend = { "sources.default" }
-    }
+    },
 }
