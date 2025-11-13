@@ -11,6 +11,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', "<leader>vd", vim.diagnostic.open_float, opts)
     vim.keymap.set('n', "<leader>vca", vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', "<leader>f", vim.lsp.buf.format, opts)
+    vim.keymap.set('n', "]d", vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', "[d", vim.diagnostic.goto_prev, opts)
     -- vim.keymap.set('n', "<leader>gd", lsp_definition_vsplit, opts)
   end,
 })
