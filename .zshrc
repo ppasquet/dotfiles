@@ -125,15 +125,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.cargo/env"
-. "/Users/pierrepasquet/.deno/env"
-
-
-alias notes="cd $HOME/md-notes && nvim"
-
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/Users/pierrepasquet/.local/bin:$PATH"
 export PATH='/Users/pierrepasquet/.duckdb/cli/latest':$PATH
-# export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/
-export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+eval "$(ruby ~/.local/try.rb init ~/Developer/tries)"
