@@ -11,11 +11,7 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = {
-<<<<<<< Updated upstream
                     "python", "sql", "c"
-=======
-                    "python", "c"
->>>>>>> Stashed changes
                 },
 
                 sync_install = true,
