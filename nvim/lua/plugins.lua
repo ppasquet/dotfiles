@@ -11,7 +11,8 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = {
-                    "python", "sql", "c"
+                    "python", "sql", "c",
+                    "zig"
                 },
 
                 sync_install = true,

@@ -1,6 +1,7 @@
 vim.lsp.enable('ruff')
 vim.lsp.enable('ty')
 vim.lsp.enable('clangd')
+vim.lsp.enable('zls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)

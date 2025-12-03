@@ -126,7 +126,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="/Users/pierrepasquet/zig/build/stage3/bin:$PATH"
 export PATH="/Users/pierrepasquet/.local/bin:$PATH"
 export PATH='/Users/pierrepasquet/.duckdb/cli/latest':$PATH
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 eval "$(ruby ~/.local/try.rb init ~/Developer/tries)"
+
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
+export LD_LIBRARY_PATH="/opt/homebrew/lib:$LD_LIBRARY_PATH"
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+
